@@ -76,3 +76,17 @@ sudo v2raya --reset-password  #重置密码
 在设置中选择透明代理的分流方式，以及实现方式，然后保存即可。
 
 注意，如需选择 GFWList，需要下载对应的规则库，请点击右上角的更新以完成下载。
+
+1.Install & Upgrade Xray-core and geodata with User=nobody, but will NOT overwrite User in existing service files
+bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install
+
+2.Update geoip.dat and geosite.dat only
+bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install-geodata
+
+3.Remove Xray, except json and logs
+bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ remove
+
+
+4.Install & Upgrade Xray-core and geodata with User=root, which will overwrite User in existing service files
+bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh)" @ install -u root
+
